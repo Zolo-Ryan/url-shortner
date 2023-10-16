@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-
-mongoose.connect('mongodb://127.0.0.1:27017/short-url');
+const mongoString = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/short-url';
+mongoose.connect(mongoString);
 
 const connection = mongoose.connection;
 
